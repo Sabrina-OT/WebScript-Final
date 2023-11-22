@@ -4,13 +4,13 @@ var router = express.Router();
 /* GET default page. */
 router.get('/', function(req, res, next) {
   res.render('index', { 
-    title: 'My Work Tracker'});
+    title: 'JobTracker'});
 });
 
 /* GET home page. */
 router.get('/home', function(req, res, next) {
   res.render('index', { 
-    title: 'My Work Tracker'});
+    title: 'JobTracker'});
 });
 
 module.exports = router;

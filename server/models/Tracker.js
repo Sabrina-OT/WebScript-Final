@@ -2,13 +2,13 @@ let mongoose = require('mongoose');
 
 //create a model class
 let taskModel = mongoose.Schema({
-    Course:String,
-    Task:String,
+    Job:String,
+    Salary:String,
     Description:String, 
-    Deadline:String
+    Company:String
 },
 {
-    collection:"Tracker"
+    collection:"Jobs"
 });
 
 module.exports = mongoose.model('Task', taskModel);

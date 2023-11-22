@@ -9,7 +9,7 @@
         <div class = "offset-md-1 col-md-10">
             <h1><% title %></h1>
 
-            <a href="/tracklist/add" class="btn btn-primary" role="button"><i class="fas fa-plus-circle"></i> Add Task</a>
+            <a href="/tracklist/add" class="btn btn-primary" role="button"><i class="fas fa-plus-circle"></i> Add New Job Listing</a>
 
         <br>
         <br>
@@ -24,10 +24,10 @@
 
             <% for(let count=0;count<TaskList.length;count++) { %>
             <tr class = "d-flex">
-                <td class = "text-center col-2"><%= TaskList[count].Course %></td>
-                <td class = "text-center col-2"><%= TaskList[count].Task %></td>
+                <td class = "text-center col-2"><%= TaskList[count].Job %></td>
+                <td class = "text-center col-2"><%= TaskList[count].Salary %></td>
                 <td class = "text-center col-4"><%= TaskList[count].Description %></td>
-                <td class = "text-center col-2"><%= TaskList[count].Deadline %></td>
+                <td class = "text-center col-2"><%= TaskList[count].Company %></td>
 
                 <td class="text-center col-1">
                     <a href="/tracklist/edit/<%= TaskList[count]._id %>" 

@@ -14,24 +14,24 @@
 
             <form class="form" method="POST">
                 <div class="form-group">
-                    <label for="nameTextField">Course</label>
+                    <label for="nameTextField">Job</label>
                     <input type="text" class="form-control"
                     id="courseTextField"
-                    placeholder="Enter the Course"
+                    placeholder="Enter the Job title"
                     name="Course" 
-                    value="<%= Task.Course %>"
+                    value="<%= Task.Job %>"
                     required>
                 </div>
 
                 <br>
 
                 <div class="form-group">
-                    <label for="authorTextField">Task</label>
+                    <label for="authorTextField">Salary</label>
                     <input type="text" class="form-control"
                     id="taskTextField"
-                    placeholder="Enter the Task"
+                    placeholder="Enter the Salary of the job"
                     name="Task" 
-                    value="<%= Task.Task %>"
+                    value="<%= Task.Salary %>"
                     required>
                 </div>
 
@@ -41,7 +41,7 @@
                     <label for="descriptionTextArea">Description</label>
                     <textarea type="text" class="form-control"
                     id="descriptionTextArea"
-                    placeholder="Enter the a brief description of the task"
+                    placeholder="Enter the a brief description of the job"
                     name="Description" 
                     required>
                     <%= Task.Description %>
@@ -51,12 +51,12 @@
                 <br>
 
                 <div class="form-group">
-                    <label for="priceTextField">Deadline</label>
+                    <label for="priceTextField">Company</label>
                     <input type="text" class="form-control"
                     id="deadlineTextField"
-                    placeholder="Enter the Deadline"
+                    placeholder="Enter the Company name"
                     name="Deadline" 
-                    value="<%= Task.Deadline %>"
+                    value="<%= Task.Company %>"
                     required>
                 </div>
 

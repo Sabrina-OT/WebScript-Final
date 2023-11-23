@@ -14,25 +14,27 @@
 
             <form class="form" method="POST">
                 <div class="form-group">
-                    <label for="nameTextField">Job</label>
-                    <input type="text" class="form-control"
-                    id="courseTextField"
-                    placeholder="Enter the Job title"
-                    name="Course" 
-                    value="<%= Task.Job %>"
+                    <label for="jobTextArea">Job</label>
+                    <textarea type="text" class="form-control"
+                    id="jobTextArea"
+                    placeholder="Enter the Job"
+                    name="Job" 
                     required>
+                    <%= Task.Job %>
+                    </textarea>
                 </div>
 
                 <br>
 
                 <div class="form-group">
-                    <label for="authorTextField">Salary</label>
-                    <input type="text" class="form-control"
-                    id="taskTextField"
-                    placeholder="Enter the Salary of the job"
-                    name="Task" 
-                    value="<%= Task.Salary %>"
+                    <label for="salaryTextArea">Salary</label>
+                    <textarea type="text" class="form-control"
+                    id="salaryTextArea"
+                    placeholder="Enter the Salary"
+                    name="Salary" 
                     required>
+                    <%= Task.Salary %>
+                    </textarea>
                 </div>
 
                 <br>
@@ -51,13 +53,14 @@
                 <br>
 
                 <div class="form-group">
-                    <label for="priceTextField">Company</label>
-                    <input type="text" class="form-control"
-                    id="deadlineTextField"
-                    placeholder="Enter the Company name"
-                    name="Deadline" 
-                    value="<%= Task.Company %>"
+                    <label for="companyTextArea">Company</label>
+                    <textarea type="text" class="form-control"
+                    id="companyTextArea"
+                    placeholder="Enter the Company"
+                    name="Company" 
                     required>
+                    <%= Task.Company %>
+                    </textarea>
                 </div>
 
                 <br>

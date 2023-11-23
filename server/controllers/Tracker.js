@@ -39,10 +39,10 @@ module.exports.AddTask = (req, res, next) => {
 module.exports.ProcessTask = (req, res, next) => {
     try{
         let newTask = Task({
-            "Course": req.body.Course,
-            "Task": req.body.Task,
+            "Job": req.body.Job,
+            "Salary": req.body.Salary,
             "Description": req.body.Description,
-            "Deadline": req.body.Deadline
+            "Company": req.body.Company
         });
         Task.create(newTask).then(() => {
             res.redirect('/tracklist')
@@ -83,10 +83,10 @@ module.exports.ProcessEditTask = (req, res, next) => {
         const id = req.params.id;
         let updatedTask = Task({
             "_id": id,
-            "Course": req.body.Course,
-            "Task": req.body.Task,
+            "Job": req.body.Job,
+            "Salary": req.body.Salary,
             "Description": req.body.Description,
-            "Deadline": req.body.Deadline
+            "Company": req.body.Company
         })
         Task.findByIdAndUpdate(id, updatedTask).then(() =>{
             res.redirect('/tracklist')

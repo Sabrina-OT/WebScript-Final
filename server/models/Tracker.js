@@ -1,7 +1,7 @@
 let mongoose = require('mongoose');
 
 //create a model class
-let taskModel = mongoose.Schema({
+let jobModel = mongoose.Schema({
     Job:String,
     Salary:String,
     Description:String, 
@@ -11,4 +11,4 @@ let taskModel = mongoose.Schema({
     collection:"Jobs"
 });
 
-module.exports = mongoose.model('Task', taskModel);
+module.exports = mongoose.model('Task', jobModel);

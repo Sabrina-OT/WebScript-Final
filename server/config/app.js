@@ -19,6 +19,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
+
 //NEW UPDATES 2023-11-06 -----------------------------
 let mongoose = require('mongoose');
 let mongoDB = mongoose.connection;

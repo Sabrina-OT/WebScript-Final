@@ -15,6 +15,7 @@
                     <a class="nav-link" href="/home"> 
                     <% } %>
                     <i class="fa-solid fa-house"></i> Home</a>
+                </li>
                     
                 <li class="nav-item">
                     <% if (title == "Track List") { %>
@@ -23,6 +24,16 @@
                     <a class="nav-link" href="/tracklist"> 
                     <% } %>
                     <i class="fa-solid fa-clipboard-check"></i> Tracker</a>
+                </li>
+
+                <li class="nav-item">
+                    <% if (title == "About Us") { %>
+                    <a class="nav-link active" href="/about">
+                    <% } else { %>
+                    <a class="nav-link" href="/about"> 
+                    <% } %>
+                    <i class="fa-solid fa-question"></i> About</a>
+                </li>
                       
             </ul>
         </div>

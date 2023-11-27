@@ -17,6 +17,12 @@ body
     margin: 15px;
     font-size: 4.5em; 
 }
+
+#homeImage
+{
+  border: 5px solid #ffffff;
+}
+
 section {
     margin-bottom: 40px;
   }
@@ -72,3 +78,10 @@ section {
   .hero-button:hover {
     background-color: #2980b9; /* Change to a darker shade on hover */
   }
+
+
+#questions
+{
+  margin: 20px;
+  padding: 20px;
+}

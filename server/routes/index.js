@@ -19,4 +19,10 @@ router.get('/about', function(req, res, next) {
     title: 'About Us'});
 });
 
+/* GET FAQ page. */
+router.get('/FAQ', function(req, res, next) {
+  res.render('FAQ', { 
+    title: 'FAQ'});
+});
+
 module.exports = router;

@@ -18,11 +18,6 @@ body
     font-size: 4.5em; 
 }
 
-#homeImage
-{
-  border: 5px solid #ffffff;
-}
-
 section {
     margin-bottom: 40px;
   }
@@ -38,7 +33,7 @@ section {
   }
 
 
-#aboutTitle
+#Title
 {
     padding: 0px;
     margin: 20px;
@@ -54,6 +49,17 @@ section {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center; /* Center aligning the text */
   }
+
+#formDescription
+{
+  max-width: 500px;
+  margin: 20px auto; /* Updated margin to auto for center alignment */
+  padding: 50px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: left; /* Center aligning the text */
+}
 
 /*#description
 {
@@ -82,6 +88,12 @@ section {
 
 #questions
 {
-  margin: 20px;
+  margin: 60px;
   padding: 20px;
+}
+
+#about
+{
+  padding: 50px;
+  margin: 80px;
 }

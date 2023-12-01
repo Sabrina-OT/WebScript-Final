@@ -29,7 +29,6 @@ app.use(express.static(path.join(__dirname, '../../node_modules')));
 let mongoose = require('mongoose');
 let mongoDB = mongoose.connection;
 let DB = require('./db');
-//mongoose.connect('mongodb://127.0.0.1:27017/BookLib');
 mongoose.connect(DB.URI);
 mongoDB.on('error',console.error.bind(console,'Connection Error'));
 mongoDB.once('open',()=>{console.log("Mongo DB is connected")});

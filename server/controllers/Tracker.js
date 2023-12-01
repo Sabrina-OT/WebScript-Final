@@ -8,7 +8,8 @@ module.exports.displayJoblist = async (req, res, next) => {
         const TaskList = await Task.find();
         res.render('track/list', {
             title: "Track List",
-            TaskList: TaskList
+            TaskList: TaskList,
+            displayName: req.user ? req.user.displayName:''
         });
     }
     catch(err){
@@ -24,7 +25,8 @@ module.exports.AddJob = (req, res, next) => {
     try{
         res.render('track/add',
         {
-            title: 'Add Task'
+            title: 'Add Task',
+            displayName: req.user ? req.user.displayName:''
         })
     }
     catch(err){
@@ -65,7 +67,8 @@ module.exports.EditJob = async (req, res, next) => {
         res.render('track/edit',
         {
             title: 'Edit Task',
-            Task: taskToEdit
+            Task: taskToEdit,
+            displayName: req.user ? req.user.displayName:''
         })
     }
     catch(err){

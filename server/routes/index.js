@@ -62,7 +62,7 @@ router.get('/register',function(req,res,next){
 router.post('/register', function(req,res,next){
   let newUser = new User({
     username: req.body.username,
-    // password: req.body.password,
+    //password: req.body.password,
     email: req.body.email,
     displayName: req.body.displayName
   })
@@ -109,7 +109,7 @@ router.get('/', function(req, res, next) {
 /* GET home page. */
 router.get('/home', function(req, res, next) {
   res.render('index', { 
-    title: 'My Work Tracker'});
+    title: 'Job Tracker'});
 });
 
 /* GET about page. */

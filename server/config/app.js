@@ -1,16 +1,23 @@
-/* installed 3rd party packages */
 let createError = require('http-errors');
 let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
+var router = express.Router();
 
-/* creating an application */
 let app = express();
+let session = require('express-session');
+let passport = require('passport');
+let passportLocal = require('passport-local');
+let localStrategy = passportLocal.Strategy;
+let flash = require('connect-flash');
 
+// create a user model instance
+let userModel = require('../models/user');
+let User = userModel.User;
 // view engine setup
-app.set('views', path.join(__dirname, '../views')); //if looking for views, go into the folder 'views
-app.set('view engine', 'ejs'); //using view engine ejs
+app.set('views', path.join(__dirname, '../views'));
+app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -19,26 +26,37 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
-
-//NEW UPDATES 2023-11-06 -----------------------------
 let mongoose = require('mongoose');
 let mongoDB = mongoose.connection;
 let DB = require('./db');
-// mongoose.connect('mongodb://127.0.0.1:27017/WorkTracker');
+//mongoose.connect('mongodb://127.0.0.1:27017/BookLib');
 mongoose.connect(DB.URI);
-mongoDB.on('error', console.error.bind(console, 'Connection Error'));
-mongoDB.once('open', ()=>{console.log("MongoDB is connected")});
+mongoDB.on('error',console.error.bind(console,'Connection Error'));
+mongoDB.once('open',()=>{console.log("Mongo DB is connected")});
 //mongoose.connect(DB.URI);
-// ----------------------------------------------------
-
-/* related to the routers */
+// Set-up Express-Session
+app.use(session({
+  secret:"SomeSecret",
+  saveUninitialized:false,
+  resave:false
+}));
+// initialize flash-connect
+app.use(flash());
+// implement a user authentication
+passport.use(User.createStrategy());
+// Serialize and Deserialize user information
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser()); 
+// initialize the passport
+app.use(passport.initialize());
+app.use(passport.session());
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
-let TrackerRouter = require('../routes/Tracker');
+let TaskRouter = require('../routes/Tracker');
 
-app.use('/', indexRouter); //localhost:5000
-app.use('/users', usersRouter);//localhost:5000/users
-app.use('/tracklist', TrackerRouter);
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+app.use('/tracklist', TaskRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -53,10 +71,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error', 
-  {
-    title: "Error"
-  });
+  res.render('error',{title:'Error'});
 });
 
 module.exports = app;

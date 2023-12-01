@@ -8,6 +8,7 @@
 <main class="container">
     <div class="row">
         <div class="col-md-offset-2 col-md-10">
+
             <% if(typeof displayName=='string' && displayName) { %>
                 <a href="/tracklist/add" class="btn btn-primary" role="button">
                 <i class="fas fa-plus-circle"></i> Add a Job Listing</a>
@@ -15,53 +16,53 @@
             <% } %>
             <br>
 
-    <table class= "table table-bordered table-striped table-hover">
-        <tr class="d-flex">
-        <% if(typeof displayName=='string' && displayName) { %>
-            <th class="text-center col-2">Job</th>
-            <th class="text-center col-2">Salary</th>
-            <th class="text-center col-4">Description</th>
-            <th class="text-center col-2">Company</th>
-            <th class="text-center col-1"></th>
-            <th class="text-center col-1"></th>
-        <% } else { %>
-            <th class="text-center col-2">Job</th>
-            <th class="text-center col-2">Salary</th>
-            <th class="text-center col-6">Description</th>
-            <th class="text-center col-2">Company</th>
-        <% } %>
-        </tr>
+            <table class= "table table-bordered table-striped table-hover" >
+                <tr class="d-flex">
+                <% if(typeof displayName=='string' && displayName) { %>
+                    <th class="text-center col-2">Job</th>
+                    <th class="text-center col-2">Salary</th>
+                    <th class="text-center col-4">Description</th>
+                    <th class="text-center col-2">Company</th>
+                    <th class="text-center col-1"></th>
+                    <th class="text-center col-1"></th>
+                <% } else { %>
+                    <th class="text-center col-2">Job</th>
+                    <th class="text-center col-2">Salary</th>
+                    <th class="text-center col-6">Description</th>
+                    <th class="text-center col-2">Company</th>
+                <% } %>
+                </tr>
 
-    <!-- Repeat the template -->
-    <% for(let count=0; count < TaskList.length; count++) { %>
-        <tr class="d-flex">
-        <% if(typeof displayName=='string' && displayName) { %>
-            <td class="text-center col-2"><%= TaskList[count].Job %></td>
-            <td class="text-center col-2"><%= TaskList[count].Salary %></td>
-            <td class="text-center col-4"><%= TaskList[count].Description %></td>
-            <td class="text-center col-2"><%= TaskList[count].Company %></td>
-            <td class="text-center col-1">
-                <a href="/tracklist/edit/<%= TaskList[count]._id %>"
-                    class="btn btn-primary">
-                    <i class="fas fa-pencil-alt"></i> Edit </a>
-            </td>
-            <td class="text-center col-1"  onclick='checker()'>
-                <a href="/tracklist/delete/<%= TaskList[count]._id %>"
-                    class="btn btn-danger">
-                    <i class="fas fa-trash-alt"></i> Delete </a>
-            </td>
+            <!-- Repeat the template -->
+            <% for(let count=0; count < TaskList.length; count++) { %>
+                <tr class="d-flex">
+                <% if(typeof displayName=='string' && displayName) { %>
+                    <td class="text-center col-2"><%= TaskList[count].Job %></td>
+                    <td class="text-center col-2"><%= TaskList[count].Salary %></td>
+                    <td class="text-center col-4"><%= TaskList[count].Description %></td>
+                    <td class="text-center col-2"><%= TaskList[count].Company %></td>
+                    <td class="text-center col-1">
+                        <a href="/tracklist/edit/<%= TaskList[count]._id %>"
+                            class="btn btn-primary">
+                            <i class="fas fa-pencil-alt"></i> Edit </a>
+                    </td>
+                    <td class="text-center col-1"  onclick='checker()'>
+                        <a href="/tracklist/delete/<%= TaskList[count]._id %>"
+                            class="btn btn-danger">
+                            <i class="fas fa-trash-alt"></i> Delete </a>
+                    </td>
 
-        <% } else { %>
-            <td class="text-center col-2"><%= TaskList[count].Job %></td>
-            <td class="text-center col-2"><%= TaskList[count].Salary %></td>
-            <td class="text-center col-6"><%= TaskList[count].Description %></td>
-            <td class="text-center col-2"><%= TaskList[count].Company %></td>
-        <% } %>       
-        </tr>
-    <% } %>
-    </table>
+                <% } else { %>
+                    <td class="text-center col-2"><%= TaskList[count].Job %></td>
+                    <td class="text-center col-2"><%= TaskList[count].Salary %></td>
+                    <td class="text-center col-6"><%= TaskList[count].Description %></td>
+                    <td class="text-center col-2"><%= TaskList[count].Company %></td>
+                <% } %>       
+                </tr>
+            <% } %>
+            </table>
+        </div>
     </div>
-</div>
 
 </main>
 

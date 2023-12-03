@@ -68,7 +68,7 @@ module.exports.EditJob = async (req, res, next) => {
         {
             title: 'Edit Task',
             Task: taskToEdit,
-            displayName: req.user ? req.user.displayName:''
+            displayName: req.user ? req.user.displayName: ''
         })
     }
     catch(err){

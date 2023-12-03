@@ -15,6 +15,7 @@ let flash = require('connect-flash');
 // create a user model instance
 let userModel = require('../models/user');
 let User = userModel.User;
+
 // view engine setup
 app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs');
@@ -33,6 +34,8 @@ mongoose.connect(DB.URI);
 mongoDB.on('error',console.error.bind(console,'Connection Error'));
 mongoDB.once('open',()=>{console.log("Mongo DB is connected")});
 //mongoose.connect(DB.URI);
+
+
 // Set-up Express-Session
 app.use(session({
   secret:"SomeSecret",
@@ -46,9 +49,12 @@ passport.use(User.createStrategy());
 // Serialize and Deserialize user information
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser()); 
+
 // initialize the passport
 app.use(passport.initialize());
 app.use(passport.session());
+
+// create a user model instance
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
 let TaskRouter = require('../routes/Tracker');

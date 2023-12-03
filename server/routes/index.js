@@ -103,7 +103,7 @@ router.get('/logout',function(req,res,next){
 /* GET default page. */
 router.get('/', function(req, res, next) {
   res.render('index', { 
-    title: 'My Work Tracker'});
+    title: 'My Job Tracker'});
 });
 
 /* GET home page. */

@@ -7,7 +7,7 @@ module.exports.displayJoblist = async (req, res, next) => {
     try{
         const TaskList = await Task.find();
         res.render('track/list', {
-            title: "Track List",
+            title: "Job List",
             TaskList: TaskList,
             displayName: req.user ? req.user.displayName:''
         });
@@ -25,7 +25,7 @@ module.exports.AddJob = (req, res, next) => {
     try{
         res.render('track/add',
         {
-            title: 'Add Task',
+            title: 'Add Job',
             displayName: req.user ? req.user.displayName:''
         })
     }
@@ -66,7 +66,7 @@ module.exports.EditJob = async (req, res, next) => {
         const taskToEdit = await Task.findById(id);
         res.render('track/edit',
         {
-            title: 'Edit Task',
+            title: 'Edit Job',
             Task: taskToEdit,
             displayName: req.user ? req.user.displayName: ''
         })

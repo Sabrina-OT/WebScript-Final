@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/home">Tech Jobs</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/home"> 
+                    <i class="fa-solid fa-house"></i> Home</a>
+                </li>
+               <li class="nav-item">
+                    <a class="nav-link" href="/tracker"> 
+                    <i class="fa-solid fa-clipboard-check"></i> Tracker</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about"> 
+                    <i class="fa-solid fa-address-card"></i> About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/faq"> 
+                    <i class="fa-solid fa-question"></i> FAQ</a>
+                </li>
+                <li class="navbar-text" *ngIf="displayName">
+                    <i class="fas fa-lg fa-user"></i>
+                    Welcome, {{ displayName }}
+                </li>
+
+                <li class="nav-item" *ngIf="displayName">
+                    <a class="nav-link" routerLink="/logout">
+                        <i class="fa-solid fa-sign-out-alt"></i> Logout
+                    </a>
+                </li>
+                <li class="nav-item" *ngIf="!displayName">
+                    <a class="nav-link" routerLink="/login">
+                        <i class="fa-solid fa-sign-in-alt"></i> Login
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

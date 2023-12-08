@@ -1,0 +1,57 @@
+
+
+<!-- Link to your app.css -->
+<link href="add.component.css" rel="stylesheet" type="text/css">
+
+<!-- Content for the Add page -->
+<div class="container">
+  <div class="row">
+    <div class="offset-md-3 col-md-6">
+      <h1>{{ title }}</h1>
+      <br>
+        
+      <form class="form" method="POST">  <!-- (ngSubmit)="onSubmit()"--> 
+        <div class="form-group">
+          <label for="jobTextField">Job</label>
+          <input type="text" class="form-control" id="jobTextField" placeholder="Enter the Job" name="Job" required>
+        </div>
+
+        <br>
+
+        <div class="form-group">
+          <label for="salaryTextArea">Salary</label>
+          <textarea type="text" class="form-control" id="salaryTextArea" placeholder="Enter a Salary" name="Salary" required></textarea>
+        </div>
+
+        <br>
+
+        <div class="form-group">
+          <label for="descriptionTextArea">Description</label>
+          <textarea type="text" class="form-control" id="descriptionTextArea" placeholder="Enter a Description" name="Description" required></textarea>
+        </div>
+
+        <br>
+
+        <div class="form-group">
+          <label for="companyTextField">Company</label>
+          <input type="text" class="form-control" id="companyTextField" placeholder="Enter the Company" name="Company" required>
+        </div>
+
+        <br>
+        <br>
+
+        <button class="btn btn-primary" type="submit">
+          <i class="fas fa-edit"></i> Submit</button>
+
+        <!-- Adjust the routerLink based on your routing configuration -->
+        <a routerLink="/tracklist" class="btn btn-warning">
+          <i class="fas fa-undo"></i> Cancel</a>
+      </form>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+</div>
+

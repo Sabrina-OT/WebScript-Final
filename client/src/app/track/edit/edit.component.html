@@ -1,0 +1,41 @@
+
+<link href="edit.component.css" rel="stylesheet" type="text/css">
+
+<br>
+
+<!-- Content for the Edit page -->
+<div class="container">
+  <div class="row">
+    <div class="offset-md-3 col-md-6">
+      <h1>{{ title }}</h1>
+      <br>
+
+      <form class="form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="jobTextArea">Job</label>
+          <textarea type="text" class="form-control"
+            id="jobTextArea"
+            placeholder="Enter the Job"
+            name="Job" 
+            required
+            [(ngModel)]="Task.Job">
+          </textarea>
+        </div>
+
+        <!-- Similar structure for other fields (Salary, Description, Company) -->
+
+        <br>
+
+        <button class="btn btn-primary" type="submit">
+          <i class="fas fa-edit"></i> Submit</button>
+
+        <a routerLink="/tracklist" class="btn btn-warning">
+          <i class="fas fa-undo"></i> Cancel</a>
+      </form>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+</div>

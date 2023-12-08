@@ -1,1 +1,50 @@
-<p>faq works!</p>
+
+
+<!-- Link to your app.css -->
+<link href="faq.component.css" rel="stylesheet" type="text/css">
+
+<!-- Dynamic title -->
+<h1 id="Title">{{ title }}</h1>
+
+<!-- Content of webpage -->
+<main id='questions'>
+
+  <div class="accordion accordion-flush" id="accordionFlushExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+          Where does TechJobs find Job Openings?
+        </button>
+      </h2>
+      <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          <ul>
+            <li>LinkedIn Job Search</li>
+            <!-- ... (rest of your content) ... -->
+          </ul>
+          <span class="note">We are also affiliated with certain Tech companies and personally get some of our job postings from them.</span>
+        </div>
+      </div>
+    </div>
+    <!-- ... (other accordion items) ... -->
+  </div>
+
+</main>
+
+<section>
+  <h1>More Questions <i class="fa-regular fa-circle-question"></i></h1>
+  <h3>Please reach out!</h3>
+  <form action="mailto:sabrina.skoric@ontariotechu.net" method="post" enctype="text/plain" name="form" id='formDescription'>
+    <!-- ... (rest of your form) ... -->
+  </form>
+  <div class='text-center'>
+    <!-- Content -->
+    <img src="https://media.badgr.io/uploads/badges/issuer_badgeclass_04c54c65-5a63-47fd-b391-2600e34c8114.png" alt="..." width='100'>
+  </div>
+</section>
+
+<br>
+<br>
+<br>
+<br>
+

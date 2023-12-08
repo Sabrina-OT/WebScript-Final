@@ -3,13 +3,12 @@
 body
 { 
     background-image: url('https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700403823.jpg');
-    /*background-image: url('client/src/content/img.jpg');
-    background: #0378A6; 
+    /*background: #0378A6; 
     background: -moz-linear-gradient(top, #011C40 0%, #0378A6 100%); 
     background: -webkit-linear-gradient(top, #011C40 0%, #0378A6 100%); 
     background: -o-linear-gradient(top, #011C40 0%, #0378A6 100%); 
-    background: linear-gradient(to bottom, #011C40 0%,#0378A6 100%); */
-    color: white !important;
+    background: linear-gradient(to bottom, #011C40 0%,#0378A6 100%); 
+    color: white !important; */
     text-align: center !important; 
 }
 
@@ -67,7 +66,7 @@ section {
   background-color: rgba(255, 255, 255, 0.7); /* Use rgba to add transparency (0.9 for 90% opaque) */
 }
 
-#description 
+/*#description
 {
     text-align: left;
     margin:20px;
@@ -101,8 +100,8 @@ section {
   border: none; /* Remove the border */
   border-radius: 5px; /* Add rounded corners */
   font-size: 16px; /* Increase the font size */
-  font-weight: bold;
-  text-transform: uppercase; 
+  font-weight: bold; /* Make the text bold */
+  text-transform: uppercase; /* Convert text to uppercase */
   transition: background-color 0.3s; /* Add a smooth transition effect */
 }
 

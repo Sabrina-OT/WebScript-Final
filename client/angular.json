@@ -3,9 +3,19 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "JobTracking": {
+    "Jobtracking": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "standalone": false
+        },
+        "@schematics/angular:directive": {
+          "standalone": false
+        },
+        "@schematics/angular:pipe": {
+          "standalone": false
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/job-tracking",
+            "outputPath": "dist/jobtracking",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -25,7 +35,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/content/styles.css",
+              "src/Content/styles.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/@fortawesome/fontawesome-free/css/all.min.css"
             ],
@@ -33,12 +43,7 @@
               "./node_modules/jquery/dist/jquery.min.js",
               "./node_modules/bootstrap/dist/js/bootstrap.min.js",
               "src/scripts/app.js"
-            ],
-            "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
-            }
+            ]
           },
           "configurations": {
             "production": {
@@ -68,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "JobTracking:build:production"
+              "buildTarget": "Jobtracking:build:production"
             },
             "development": {
-              "buildTarget": "JobTracking:build:development"
+              "buildTarget": "Jobtracking:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "JobTracking:build"
+            "buildTarget": "Jobtracking:build"
           }
         },
         "test": {

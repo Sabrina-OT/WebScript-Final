@@ -1,0 +1,74 @@
+<!-- Add your Angular directives and bindings as needed -->
+<div>
+    <h1>{{ title }}</h1>
+  
+    <!-- Stylesheet link (adjust path accordingly) -->
+    <link href="list.component.css" rel="stylesheet" type="text/css">
+  
+    <main class="container">
+      <div class="row">
+        <div class="col-md-offset-2 col-md-10">
+  
+          <!-- Conditionally show Add Job Listing button based on user status -->
+          <!--<ng-container *ngIf="displayName">-->
+            <a routerLink="/tracklist/add" class="btn btn-primary" role="button">
+              <i class="fas fa-plus-circle"></i> Add a Job Listing
+            </a>
+            <br><br>
+          <!--</ng-container>-->
+  
+          <table class="table table-bordered table-striped table-hover">
+            <tr class="d-flex">
+              <!-- Table header based on user status -->
+              <ng-container *ngIf="displayName">
+                <th class="text-center col-2">Job</th>
+                <th class="text-center col-2">Salary</th>
+                <th class="text-center col-4">Description</th>
+                <th class="text-center col-2">Company</th>
+                <th class="text-center col-1"></th>
+                <th class="text-center col-1"></th>
+              </ng-container>
+              <ng-container *ngIf="!displayName">
+                <th class="text-center col-2">Job</th>
+                <th class="text-center col-2">Salary</th>
+                <th class="text-center col-6">Description</th>
+                <th class="text-center col-2">Company</th>
+              </ng-container>
+            </tr>
+  
+            <!-- Loop through TaskList to display data -->
+            <tr class="d-flex" *ngFor="let task of TaskList">
+              <!-- Display table cells based on user status -->
+
+              <ng-container ><!--*ngIf="displayName"-->
+                <td class="text-center col-2">{{ task.Job }}</td>
+                <td class="text-center col-2">{{ task.Salary }}</td>
+                <td class="text-center col-4">{{ task.Description }}</td>
+                <td class="text-center col-2">{{ task.Company }}</td>
+                <td class="text-center col-1">
+
+                  <a routerLink ="'/tracklist/edit/' + task._id" class="btn btn-primary" role="button">
+                    <i class="fas fa-pencil-alt"></i> Edit
+                  </a>
+                </td>
+                <td class="text-center col-1">
+                  <button class="btn btn-danger" (click)="confirmDelete(task._id)">
+                    <i class="fas fa-trash-alt"></i> Delete
+                  </button>
+                </td>
+              </ng-container>
+              <ng-container *ngIf="!displayName">
+                <td class="text-center col-2">{{ task.Job }}</td>
+                <td class="text-center col-2">{{ task.Salary }}</td>
+                <td class="text-center col-6">{{ task.Description }}</td>
+                <td class="text-center col-2">{{ task.Company }}</td>
+              </ng-container>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </main>
+  
+    <!-- JavaScript function can be added in the TypeScript file -->
+  </div>
+  
